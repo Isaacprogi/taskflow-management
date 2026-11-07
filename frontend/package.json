@@ -1,0 +1,45 @@
+{
+  "name": "taskflow-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite --host",
+    "build": "vite build",
+    "build:dev": "vite build --mode development",
+    "cap:sync:dev": "cross-env CAP_ENV=development npm run build:dev && cross-env CAP_ENV=development cap sync",
+    "cap:sync:prod": "cross-env CAP_ENV=production npm run build && cross-env CAP_ENV=production cap sync",
+    "android:open": "cap open android",
+    "android:run": "npm run cap:sync:dev && cap run android",
+    "android:live": "cap run android -l --external",
+    "ios:open": "cap open ios",
+    "ios:run": "npm run cap:sync:dev && cap run ios"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "private": "true",
+  "type": "module",
+  "dependencies": {
+    "@capacitor/app": "^8.1.2",
+    "@capacitor/core": "^8.6.0",
+    "@capacitor/network": "^8.0.1",
+    "@capacitor/preferences": "^8.0.1",
+    "axios": "^1.21.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router-dom": "^7.18.5"
+  },
+  "devDependencies": {
+    "@capacitor/android": "^8.6.0",
+    "@capacitor/cli": "^8.6.0",
+    "@capacitor/ios": "^8.6.0",
+    "@tailwindcss/vite": "^4.3.5",
+    "@vitejs/plugin-react": "^6.2.1",
+    "cross-env": "^10.1.0",
+    "tailwindcss": "^4.3.5",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.6"
+  }
+}
